@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 420" role="img" aria-label="HBG Epic Giant Worlds">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#17384f"/>
+      <stop offset=".58" stop-color="#6e9aab"/>
+      <stop offset="1" stop-color="#efd4a7"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="420" rx="38" fill="url(#bg)"/>
+  <circle cx="960" cy="118" r="86" fill="#f6d59d" opacity=".92"/>
+  <path d="M0 310 190 112l98 108 132-174 260 270 165-150 355 197v57H0Z" fill="#183848" opacity=".84"/>
+  <path d="M0 334c176-73 294-29 410 2 119 31 222 13 335-13 152-36 282-14 455 38v59H0Z" fill="#fff" opacity=".82"/>
+  <g fill="#f9f1e3">
+    <text x="74" y="150" font-family="Georgia,serif" font-size="66" font-weight="700">HBG EPIC GIANT WORLDS</text>
+    <text x="78" y="213" font-family="Arial,sans-serif" font-size="30" letter-spacing="8">KEYWORD · EASTERN STYLE · ROAM</text>
+  </g>
+  <g fill="#8d3d2e">
+    <rect x="557" y="301" width="8" height="25" rx="3"/>
+    <circle cx="561" cy="296" r="5"/>
+  </g>
+</svg>
+

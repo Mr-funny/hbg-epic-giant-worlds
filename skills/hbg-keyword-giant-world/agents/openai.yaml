@@ -1,0 +1,7 @@
+interface:
+  display_name: "HBG 关键词巨物世界"
+  short_description: "把单个国家宗教文明或概念扩写成巨物母图与视频提示词"
+  icon_small: "./assets/icon.svg"
+  icon_large: "./assets/icon.svg"
+  brand_color: "#C47B32"
+  default_prompt: "使用 $hbg-keyword-giant-world 把“冰岛”扩写成一组广角巨物母图与 Veo 视频提示词。"

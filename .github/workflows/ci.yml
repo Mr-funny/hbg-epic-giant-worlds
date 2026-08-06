@@ -1,0 +1,21 @@
+name: CI
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Validate repository
+        run: python3 scripts/validate_repo.py
+      - name: Compile roam script
+        run: python3 -m py_compile skills/hbg-oriental-giant-roam/scripts/roam_prompts.py
+      - name: Check shell scripts
+        run: bash -n install.sh scripts/package.sh
+

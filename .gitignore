@@ -1,0 +1,8 @@
+dist/
+*.backup-*
+__pycache__/
+*.pyc
+.DS_Store
+roam-history.jsonl
+local-prompt-bank*.jsonl
+

@@ -1,0 +1,24 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/Mr-funny/hbg-epic-giant-worlds/blob/main/skills/hbg-oriental-giant-roam/assets/prompt-bank.schema.json",
+  "title": "HBG Oriental Giant Roam prompt-bank record",
+  "type": "object",
+  "required": ["id"],
+  "properties": {
+    "id": {"type": "string", "minLength": 1},
+    "title": {"type": "string"},
+    "semantic_seed": {"type": "string"},
+    "themes": {"type": "array", "items": {"type": "string"}},
+    "scale_mechanism": {"type": ["string", "array"]},
+    "camera_family": {"type": "string"},
+    "foreground_family": {"type": "string"},
+    "cosmic_anchor": {"type": "string"},
+    "motion_seed": {"type": "string"},
+    "prompt": {"type": "string", "description": "Optional imported source text; local-only by default."},
+    "source": {"type": "string"},
+    "post_url": {"type": "string"},
+    "author": {"type": "string"},
+    "content_hash": {"type": "string"}
+  },
+  "additionalProperties": true
+}

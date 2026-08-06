@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" role="img" aria-label="HBG giant world icon">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#315b78"/>
+      <stop offset="1" stop-color="#b9d7df"/>
+    </linearGradient>
+  </defs>
+  <rect width="128" height="128" rx="28" fill="#f4ead8"/>
+  <circle cx="86" cy="38" r="22" fill="#d9a15e"/>
+  <path d="M0 87 31 54l17 18 23-41 57 62v35H0Z" fill="url(#sky)"/>
+  <path d="M13 104c24-15 44-10 64-3 17 6 31 3 51-7v34H0v-16c4-2 8-5 13-8Z" fill="#fff" opacity=".86"/>
+  <rect x="57" y="87" width="5" height="14" rx="2" fill="#7b3427"/>
+  <circle cx="59.5" cy="84" r="3" fill="#7b3427"/>
+</svg>
+

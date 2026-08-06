@@ -1,0 +1,7 @@
+interface:
+  display_name: "HBG 东方巨物漫游"
+  short_description: "从内置或本地题库抽题并统一改写为东方巨物图片与视频方案"
+  icon_small: "./assets/icon.svg"
+  icon_large: "./assets/icon.svg"
+  brand_color: "#315B78"
+  default_prompt: "使用 $hbg-oriental-giant-roam 随机漫游四题，保留题材语义并统一生成东方巨物母图与 Veo 提示词。"
