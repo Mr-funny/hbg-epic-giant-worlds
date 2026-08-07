@@ -1,6 +1,6 @@
 interface:
   display_name: "HBG 东方巨物漫游"
-  short_description: "从内置或本地题库抽题并统一改写为东方巨物图片与视频方案"
+  short_description: "从475条公开原文或自定义题库抽题并改写为东方巨物图片与视频方案"
   icon_small: "./assets/icon.svg"
   icon_large: "./assets/icon.svg"
   brand_color: "#315B78"

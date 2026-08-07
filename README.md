@@ -8,7 +8,7 @@
   <img src="https://img.shields.io/badge/Default-16%3A9-315b78?style=flat-square" alt="16:9" />
   <img src="https://img.shields.io/badge/Image-ImageGen-2563eb?style=flat-square" alt="ImageGen" />
   <img src="https://img.shields.io/badge/Video-Gemini%20%2F%20Veo-b55239?style=flat-square" alt="Gemini Veo" />
-  <img src="https://img.shields.io/badge/Roam%20cards-24-c47b32?style=flat-square" alt="24 roam cards" />
+  <img src="https://img.shields.io/badge/Public%20Prompts-475-c47b32?style=flat-square" alt="475 public prompts" />
   <img src="https://img.shields.io/badge/License-MIT-2f855a?style=flat-square" alt="MIT" />
 </p>
 
@@ -61,7 +61,7 @@ cd hbg-epic-giant-worlds
 | 生图 Prompt 直接拿去做视频 | 视频 Prompt 必须从实际母图重写，锁定可见结构与光线 |
 | 视频一动，建筑、神像和人物一起变形 | 一种主运镜、一类环境运动、一个微小人物动作、严格刚性锚点 |
 | 想漫游 Prompt 学习，却把来源风格也带进成片 | 题库只提供语义问题，统一重写成 HBG 东方巨物 Style Lock |
-| 公开题库里有大量第三方原文 | 完整原文默认只做本地导入，GitHub 内置的是 HBG 原创抽象题卡 |
+| 漫游只看摘要，学不到原 Prompt 的完整空间关系 | 默认直接抽取 475 条公开原文，并保留作者、来源 URL 与内容哈希 |
 
 > [!IMPORTANT]
 > “风格固定”不等于“构图固定”。这组三个 Skill 最重要的门禁，就是同时保持系列视觉 DNA 和镜头多样性。
@@ -72,7 +72,7 @@ cd hbg-epic-giant-worlds
 |---|---|---|---|
 | `$hbg-keyword-giant-world` | 一个国家、宗教、文明、地点、动作、物件或概念 | 概念卡、巨物母图 Prompt、图生视频 Prompt、多镜头变化表 | 从零扩写世界 |
 | `$hbg-oriental-giant-world` | 关键词、粗略想法、现有 Prompt、参考图或参考视频 | 东方巨物适配卡、统一风格母图与 Veo 语言 | 把题材稳定转换为目标东方美学 |
-| `$hbg-oriental-giant-roam` | 随机种子、主题、来源、本地 JSONL 题库 | 可复现抽题、来源记录、语义核、东方巨物改写 | 漫游、学习、连续找灵感 |
+| `$hbg-oriental-giant-roam` | 475 条公开原文、随机种子、主题、来源或自定义 JSONL 题库 | 可复现抽题、原文与来源记录、语义核、东方巨物改写 | 漫游、学习、连续找灵感 |
 
 三个 Skill 可以独立使用，也可以串起来：
 
@@ -118,6 +118,8 @@ flowchart LR
 
 ### 4. 直接运行漫游抽题脚本
 
+默认直接从仓库内置的 475 条公开 Prompt 原文中抽题：
+
 ```bash
 python3 skills/hbg-oriental-giant-roam/scripts/roam_prompts.py \
   --count 4 \
@@ -135,7 +137,17 @@ python3 skills/hbg-oriental-giant-roam/scripts/roam_prompts.py \
   --format json
 ```
 
-导入自己的本地 JSONL：
+如果只想使用 24 条 HBG 原创抽象机制题卡：
+
+```bash
+python3 skills/hbg-oriental-giant-roam/scripts/roam_prompts.py \
+  --bank skills/hbg-oriental-giant-roam/assets/prompt-bank.jsonl \
+  --count 4 \
+  --seed 2026 \
+  --format markdown
+```
+
+也可以导入自己的 JSONL：
 
 ```bash
 python3 skills/hbg-oriental-giant-roam/scripts/roam_prompts.py \
@@ -197,18 +209,13 @@ python3 skills/hbg-oriental-giant-roam/scripts/roam_prompts.py \
 
 如果母图还没有生成，Skill 只能提供“暂定运动方案”，不能假装已经写出了基于实际图片的最终 Veo Prompt。
 
-## 🗂️ 漫游题库与版权边界
+## 🗂️ 公开原文题库与版权边界
 
-这个项目的形成过程中，本地采集任务从公开页面发现了大量 Prompt：成功解析 6,529 条页面内容，整理出 2,198 条去重完整 Prompt，其中 468 条满足严格的东方元素、巨物尺度与完整场景条件。
+仓库直接公开 475 条东方巨物 Prompt 原文，默认漫游命令会从这套题库抽题。原文保留 `post_url`、`author` 和 `content_hash`，让学习、对比、改写和溯源都基于真实来源，而不是只看经过压缩的摘要。
 
-这些数字用于验证方法和构建分类系统，不代表第三方原文可以被重新打包分发。
+同时保留 24 条 HBG 原创“视觉机制题卡”，供只想研究尺度机制、不想读取长篇来源文本时选用。
 
-因此仓库采用两层设计：
-
-1. 开源 24 条 HBG 原创“视觉机制题卡”、Schema、抽题脚本、转换规则和 Skill。
-2. 第三方完整 Prompt 题库只支持用户在本地导入，默认不提交、不上传、不整库输出。
-
-当导入记录含有 `post_url`、`author`、`content_hash` 时，漫游流程会把它们保留在来源层。适配版必须与原文分开保存，不能伪装成原创采集内容。
+第三方 Prompt 不会被改名成 HBG 原创内容，也不纳入仓库的 MIT 授权。原作者与来源信息、权利边界和纠错/下架入口见 [THIRD_PARTY_PROMPTS.md](THIRD_PARTY_PROMPTS.md)。用户另外导入的私有题库仍然不会被 Skill 自动上传或提交。
 
 ## 📁 项目结构
 
@@ -228,8 +235,10 @@ hbg-epic-giant-worlds/
 │       ├── SKILL.md
 │       ├── agents/openai.yaml
 │       ├── references/
+│       ├── assets/public-eastern-giant-prompts.jsonl
 │       ├── assets/prompt-bank.jsonl
 │       └── scripts/roam_prompts.py
+├── THIRD_PARTY_PROMPTS.md
 ├── docs/article.md
 ├── examples/
 ├── scripts/validate_repo.py
@@ -268,4 +277,4 @@ Skill 本身不包含模型额度、不绕过登录、不代替用户授权，�
 
 ## License
 
-代码、Skill 文档与 HBG 原创题卡使用 [MIT License](LICENSE)。第三方 Prompt、图片、视频、商标和文化素材仍归各自权利人所有，不因本仓库的工具代码而改变许可状态。
+代码、Skill 文档与 HBG 原创题卡使用 [MIT License](LICENSE)。公开题库中的第三方 Prompt、图片、视频、商标和文化素材仍归各自权利人所有；详见 [THIRD_PARTY_PROMPTS.md](THIRD_PARTY_PROMPTS.md)。

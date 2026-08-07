@@ -14,7 +14,7 @@
     "foreground_family": {"type": "string"},
     "cosmic_anchor": {"type": "string"},
     "motion_seed": {"type": "string"},
-    "prompt": {"type": "string", "description": "Optional imported source text; local-only by default."},
+    "prompt": {"type": "string", "description": "Source prompt text. Bundled public records retain it verbatim; private imports remain private unless explicitly published."},
     "source": {"type": "string"},
     "post_url": {"type": "string"},
     "author": {"type": "string"},

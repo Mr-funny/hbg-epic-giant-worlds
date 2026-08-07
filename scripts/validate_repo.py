@@ -42,18 +42,51 @@ for skill_name in SKILLS:
     if f"name: {skill_name}\n" not in text.split("---", 2)[1]:
         fail(f"frontmatter name mismatch in {skill_file}")
 
-bank = ROOT / "skills" / "hbg-oriental-giant-roam" / "assets" / "prompt-bank.jsonl"
-records = []
-for line_number, raw in enumerate(bank.read_text(encoding="utf-8").splitlines(), 1):
-    if not raw.strip():
-        continue
-    item = json.loads(raw)
-    if not item.get("id"):
-        fail(f"bank line {line_number} has no id")
-    records.append(item)
-if len(records) < 20:
-    fail("packaged bank is unexpectedly small")
+assets = ROOT / "skills" / "hbg-oriental-giant-roam" / "assets"
+
+
+def load_bank(path: Path) -> list[dict]:
+    records = []
+    for line_number, raw in enumerate(path.read_text(encoding="utf-8").splitlines(), 1):
+        if not raw.strip():
+            continue
+        item = json.loads(raw)
+        if not item.get("id"):
+            fail(f"{path.name} line {line_number} has no id")
+        records.append(item)
+    return records
+
+
+archetypes = load_bank(assets / "prompt-bank.jsonl")
+if len(archetypes) < 24:
+    fail("HBG archetype bank is unexpectedly small")
+
+public_prompts = load_bank(assets / "public-eastern-giant-prompts.jsonl")
+if len(public_prompts) < 400:
+    fail("public source-prompt bank is unexpectedly small")
+required_source_fields = ("prompt", "post_url", "author", "content_hash")
+for item in public_prompts:
+    missing = [field for field in required_source_fields if not item.get(field)]
+    if missing:
+        fail(f"public prompt {item['id']} is missing: {', '.join(missing)}")
+if len({item["id"] for item in public_prompts}) != len(public_prompts):
+    fail("public prompt IDs must be unique")
+if len({item["content_hash"] for item in public_prompts}) != len(public_prompts):
+    fail("public prompt hashes must be unique")
 
 roam = ROOT / "skills" / "hbg-oriental-giant-roam" / "scripts" / "roam_prompts.py"
-subprocess.run([sys.executable, str(roam), "--count", "4", "--seed", "2026", "--format", "json"], check=True, stdout=subprocess.DEVNULL)
-print(f"OK: plugin, {len(SKILLS)} skills, and {len(records)} roam cards validated")
+result = subprocess.run(
+    [sys.executable, str(roam), "--count", "4", "--seed", "2026", "--format", "json"],
+    check=True,
+    capture_output=True,
+    text=True,
+)
+selection = json.loads(result.stdout)
+if not str(selection.get("bank", "")).endswith("public-eastern-giant-prompts.jsonl"):
+    fail("default roam bank is not the public source-prompt bank")
+if any(not item.get("source_prompt") for item in selection.get("items", [])):
+    fail("default roam output must include selected source prompts")
+print(
+    f"OK: plugin, {len(SKILLS)} skills, {len(public_prompts)} public prompts, "
+    f"and {len(archetypes)} HBG archetype cards validated"
+)

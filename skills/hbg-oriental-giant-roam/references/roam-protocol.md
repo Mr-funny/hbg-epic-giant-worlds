@@ -12,22 +12,25 @@ Roaming is a learning and discovery mode. A selected prompt is a question to rei
 
 Never overwrite layer 1 with layer 3. Never label a third-party source as HBG-authored.
 
-## Packaged bank
+## Packaged banks
 
-`assets/prompt-bank.jsonl` contains original HBG archetype cards derived from broad visual mechanisms. It contains no copied third-party prompt prose. Each record specifies semantic seed, scale mechanism, recommended variation, and motion seed.
+The Skill ships with two banks:
 
-## Local import
+1. `assets/public-eastern-giant-prompts.jsonl` is the default bank. It contains 475 public source prompts and retains `prompt`, `post_url`, `author`, and `content_hash` for study and traceability.
+2. `assets/prompt-bank.jsonl` contains 24 HBG-authored abstract mechanism cards. Select it explicitly when the user wants compressed archetypes instead of source prose.
+
+Keep source text unchanged in layer 1. Do not rename third-party writing as HBG-authored content. See the repository's `THIRD_PARTY_PROMPTS.md` for attribution and rights boundaries.
+
+## User-provided banks
 
 `scripts/roam_prompts.py --bank /absolute/path/archive.jsonl` accepts either archetype records or common archive records containing `id`, `prompt`, `post_url`, `author`, and `content_hash`.
 
-Imported raw text is local-only by default:
+Treat a user-provided private bank as private unless the user explicitly authorizes publication:
 
-- do not commit it;
-- do not upload it;
-- do not paste the entire bank into chat;
-- display only records needed for the user's current study request;
+- do not commit or upload it automatically;
+- display only records needed for the current request;
 - preserve source URL, author, and hash when present;
-- follow the source site's terms and applicable copyright law.
+- follow applicable source terms and law.
 
 ## Diversity gate for four questions
 
@@ -53,4 +56,3 @@ If deterministic sampling produces near-duplicates, keep the seed but advance th
 - Are tiny people and one giant form readable?
 - Is the video text based on an actual image? If not, is it labeled provisional?
 - Are provenance fields retained?
-

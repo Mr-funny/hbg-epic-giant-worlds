@@ -1,7 +1,7 @@
 {
   "name": "hbg-epic-giant-worlds",
-  "version": "1.0.0",
-  "description": "Three HBG Agent Skills for keyword colossal worlds, Eastern colossal adaptation, and prompt-bank roaming.",
+  "version": "1.1.0",
+  "description": "Three HBG Agent Skills for keyword colossal worlds, Eastern colossal adaptation, and roaming a public 475-prompt archive.",
   "author": {
     "name": "Mr-funny",
     "email": "13272618737@163.com",
@@ -15,7 +15,7 @@
   "interface": {
     "displayName": "HBG Epic Giant Worlds",
     "shortDescription": "Turn keywords and prompt banks into colossal cinematic worlds.",
-    "longDescription": "Three reusable Agent Skills expand a keyword into a colossal world, convert ideas into a consistent luminous Eastern colossal aesthetic, and roam prompt banks while preserving provenance and rewriting every image and motion prompt.",
+    "longDescription": "Three reusable Agent Skills expand a keyword into a colossal world, convert ideas into a consistent luminous Eastern colossal aesthetic, and roam a bundled public archive of 475 source prompts while preserving provenance and rewriting every image and motion prompt.",
     "developerName": "Mr-funny",
     "category": "Creative",
     "capabilities": ["Prompt Design", "Image Direction", "Video Direction", "Question Bank Roaming"],
@@ -30,4 +30,3 @@
     "logo": "./assets/logo.svg"
   }
 }
-

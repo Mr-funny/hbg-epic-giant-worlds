@@ -3,7 +3,7 @@ set -euo pipefail
 
 repo_dir="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 dist_dir="${repo_dir}/dist"
-archive="${dist_dir}/hbg-epic-giant-worlds-v1.0.0.tar.gz"
+archive="${dist_dir}/hbg-epic-giant-worlds-v1.1.0.tar.gz"
 
 mkdir -p "${dist_dir}"
 tar -czf "${archive}" \

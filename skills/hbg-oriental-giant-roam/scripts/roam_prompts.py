@@ -12,7 +12,7 @@ from pathlib import Path
 from typing import Any
 
 
-DEFAULT_BANK = Path(__file__).resolve().parent.parent / "assets" / "prompt-bank.jsonl"
+DEFAULT_BANK = Path(__file__).resolve().parent.parent / "assets" / "public-eastern-giant-prompts.jsonl"
 
 
 def load_jsonl(path: Path) -> list[dict[str, Any]]:
@@ -77,12 +77,48 @@ def load_history(path: Path | None) -> list[str]:
     return ids
 
 
+def prompt_text(item: dict[str, Any]) -> str:
+    return " ".join(
+        str(item.get(key, ""))
+        for key in ("title", "prompt", "semantic_seed", "seed_semantics")
+    ).lower()
+
+
 def camera_family(item: dict[str, Any]) -> str:
-    return str(item.get("camera_family") or item.get("camera") or "unknown")
+    explicit = item.get("camera_family") or item.get("camera")
+    if explicit:
+        return str(explicit)
+    text = prompt_text(item)
+    families = (
+        ("near-vertical top-down", ("垂直俯拍", "近垂直俯拍", "top-down", "top down")),
+        ("aerial or high overlook", ("鸟瞰", "航拍", "高空俯瞰", "高角度", "俯视", "俯拍", "aerial")),
+        ("ground-level low angle", ("贴地", "低机位", "低角度", "仰拍", "low-angle", "low angle")),
+        ("eye-level panorama", ("平视", "人眼视角", "eye-level", "eye level")),
+    )
+    for family, markers in families:
+        if any(marker in text for marker in markers):
+            return family
+    return "unspecified wide-angle"
 
 
 def foreground_family(item: dict[str, Any]) -> str:
-    return str(item.get("foreground_family") or "unknown")
+    if item.get("foreground_family"):
+        return str(item["foreground_family"])
+    text = prompt_text(item)
+    foreground_index = text.find("前景")
+    focus = text[foreground_index : foreground_index + 260] if foreground_index >= 0 else text[:500]
+    families = (
+        ("water, spray, or reflective surface", ("瀑布", "水面", "海面", "河流", "浪花", "水雾")),
+        ("stairs, bridge, or ceremonial path", ("台阶", "天阶", "石阶", "桥", "长廊", "道路", "栈道")),
+        ("terrace, railing, or architectural edge", ("平台", "栏杆", "露台", "宫殿", "飞檐", "门框")),
+        ("cliff, rock, or carved relief", ("悬崖", "岩壁", "山体", "岩石", "浮雕", "石窟")),
+        ("tree, foliage, or flowers", ("古树", "松树", "树枝", "枝叶", "花朵", "藤蔓")),
+        ("tiny figure or procession", ("女子", "人物", "行者", "僧人", "队伍", "朝圣")),
+    )
+    for family, markers in families:
+        if any(marker in focus for marker in markers):
+            return family
+    return "open foreground"
 
 
 def scale_mechanism(item: dict[str, Any]) -> str:
@@ -145,12 +181,12 @@ def selection_package(item: dict[str, Any]) -> dict[str, Any]:
         "provenance": provenance(item),
         "semantic_seed": semantic_seed,
         "scale_mechanism": item.get("scale_mechanism", item.get("matched_giant_keywords", [])),
-        "camera_family": item.get("camera_family", "choose a composition different from neighboring selections"),
-        "foreground_family": item.get("foreground_family", "choose a non-repeating foreground family"),
+        "camera_family": camera_family(item),
+        "foreground_family": foreground_family(item),
         "cosmic_anchor": item.get("cosmic_anchor", "optional; at most one"),
         "motion_seed": item.get("motion_seed", "rewrite after inspecting the actual mother image"),
         "adaptation_instruction": "Preserve the semantic kernel and cultural identity; discard source style/composition wording; rebuild with HBG Eastern Colossal Style Lock v1.0.",
-        "source_prompt_local_only": raw_prompt if raw_prompt else None,
+        "source_prompt": raw_prompt if raw_prompt else None,
     }
 
 
@@ -178,6 +214,10 @@ def render_markdown(packages: list[dict[str, Any]], seed: int, bank: Path) -> st
                 f"- Cosmic anchor: {item.get('cosmic_anchor')}",
                 f"- Motion seed: {item.get('motion_seed')}",
                 f"- Provenance: `{json.dumps(item.get('provenance', {}), ensure_ascii=False)}`",
+                "",
+                "### Source prompt",
+                "",
+                str(item.get("source_prompt") or "(This record contains no source prompt.)"),
                 "",
             ]
         )
@@ -241,4 +281,3 @@ def main() -> int:
 
 if __name__ == "__main__":
     raise SystemExit(main())
-

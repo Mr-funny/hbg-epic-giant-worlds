@@ -17,6 +17,10 @@
 - Motion seed: slow lateral arc; spray and cloud layers drift at different speeds
 - Provenance: `{"id": "hbg-arch-003"}`
 
+### Source prompt
+
+(This record contains no source prompt.)
+
 ## 02. 山体神像中的城市
 
 - ID: `hbg-arch-002`
@@ -27,6 +31,10 @@
 - Cosmic anchor: none
 - Motion seed: slow descending reveal; mist moves through fixed carved districts
 - Provenance: `{"id": "hbg-arch-002"}`
+
+### Source prompt
+
+(This record contains no source prompt.)
 
 ## 03. 火山口里的圣城
 
@@ -39,6 +47,10 @@
 - Motion seed: very slow rotational descent without orbiting the subject; smoke remains restrained
 - Provenance: `{"id": "hbg-arch-006"}`
 
+### Source prompt
+
+(This record contains no source prompt.)
+
 ## 04. 倒悬山城与正常海面
 
 - ID: `hbg-arch-024`
@@ -49,3 +61,7 @@
 - Cosmic anchor: one giant moon
 - Motion seed: slow harbor-side drift; water and ropes move, inverted city remains perfectly rigid
 - Provenance: `{"id": "hbg-arch-024"}`
+
+### Source prompt
+
+(This record contains no source prompt.)
