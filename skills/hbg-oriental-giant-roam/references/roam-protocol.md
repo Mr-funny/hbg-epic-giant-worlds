@@ -50,6 +50,9 @@ If deterministic sampling produces near-duplicates, keep the seed but advance th
 
 - Can the source's core surprise be stated in one sentence?
 - Which details are cultural facts, and which are merely source styling?
+- Has the adaptation rejected ordinary scenic tourism and merely enlarged landmarks?
+- Does the selected idea become an inhabited world-body through category collision?
+- Is there one impossible law with visible consequences and at least three scale proofs?
 - Is the new composition structurally different?
 - Does the result obey the fixed luminous Eastern Style Lock?
 - Is regional identity preserved?

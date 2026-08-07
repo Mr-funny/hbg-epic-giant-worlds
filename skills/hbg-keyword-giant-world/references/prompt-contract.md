@@ -7,12 +7,17 @@ Write in complete visual sentences and include:
 ```text
 Use case and exact 16:9 asset type
 Keyword and one-sentence visual thesis
-Credible world and spatial setting
+Explicit statement that the premise is impossible, not a plausible travel landscape
+What the keyword itself has become at world scale
+At least two fused categories and one impossible physical law
+Two visible environmental consequences of that law
 Foreground family and exact anchor
 Midground human stage
 Tiny people and one quiet action
 Atmospheric expanse
-One keyword-derived megastructure
+One keyword-derived world-body or giant construct controlling roughly half or more of the visual field
+Roads, dwellings, bridges, terraces, ports, or ritual paths visibly attached to or inside it
+At least three independent scale proofs
 At most one cosmic anchor with negative space
 Camera relationship, lens, horizon, subject placement, leading line
 Natural light, atmosphere, palette, materials, regional ornament
@@ -20,7 +25,9 @@ Cultural constraints
 Negative constraints
 ```
 
-Do not demand every object be centered or symmetric. Do not use a tree unless it is culturally or ecologically justified.
+The concept must be impossible while surfaces, light, water, mist, wear, and perspective remain physically convincing. Do not demand every object be centered or symmetric. Do not use a tree unless it is culturally or ecologically justified.
+
+Always include negative constraints against `ordinary travel documentary, plausible real-world landmark, normal temple beside volcano, normal coastal gate, merely enlarged building, giant object used only as a prop, generic scenic tourism image`.
 
 ## Image-relative Veo/Gemini prompt
 
@@ -41,4 +48,3 @@ Audio: only natural sounds supported by the visible environment, unless requeste
 ```
 
 The motion prompt must name visible facts. If no image exists, call it a motion plan rather than an image-relative prompt.
-

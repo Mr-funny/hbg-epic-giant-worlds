@@ -1,7 +1,7 @@
 {
   "name": "hbg-epic-giant-worlds",
-  "version": "1.1.0",
-  "description": "Three HBG Agent Skills for keyword colossal worlds, Eastern colossal adaptation, and roaming a public 475-prompt archive.",
+  "version": "1.2.0",
+  "description": "Three HBG Agent Skills for turning anything into an absurd inhabited giant construct, Eastern colossal adaptation, and roaming a public 475-prompt archive.",
   "author": {
     "name": "Mr-funny",
     "email": "13272618737@163.com",
@@ -14,14 +14,14 @@
   "skills": "./skills/",
   "interface": {
     "displayName": "HBG Epic Giant Worlds",
-    "shortDescription": "Turn keywords and prompt banks into colossal cinematic worlds.",
-    "longDescription": "Three reusable Agent Skills expand a keyword into a colossal world, convert ideas into a consistent luminous Eastern colossal aesthetic, and roam a bundled public archive of 475 source prompts while preserving provenance and rewriting every image and motion prompt.",
+    "shortDescription": "Turn anything into an absurd, inhabited cinematic giant construct.",
+    "longDescription": "Three reusable Agent Skills transmute any keyword into an ontologically impossible but physically rendered world-scale construct, convert ideas into a consistent luminous Eastern colossal aesthetic, and roam a bundled public archive of 475 source prompts while preserving provenance.",
     "developerName": "Mr-funny",
     "category": "Creative",
     "capabilities": ["Prompt Design", "Image Direction", "Video Direction", "Question Bank Roaming"],
     "websiteURL": "https://github.com/Mr-funny/hbg-epic-giant-worlds",
     "defaultPrompt": [
-      "把“冰岛”扩写成四个不同视角的巨物世界。",
+      "把“一把伞”转义成四个不同视角、概念不可能但材质写实的巨构世界。",
       "把“弹琴”转换成明亮空灵的东方巨物母图与视频方案。",
       "随机漫游四个题目，并统一改写成东方巨物风格。"
     ],

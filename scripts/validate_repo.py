@@ -42,6 +42,16 @@ for skill_name in SKILLS:
     if f"name: {skill_name}\n" not in text.split("---", 2)[1]:
         fail(f"frontmatter name mismatch in {skill_file}")
 
+keyword_skill = ROOT / "skills" / "hbg-keyword-giant-world"
+transmutation = keyword_skill / "references" / "colossal-transmutation.md"
+if not transmutation.exists():
+    fail("missing colossal transmutation reference")
+keyword_text = (keyword_skill / "SKILL.md").read_text(encoding="utf-8")
+transmutation_text = transmutation.read_text(encoding="utf-8")
+for required_phrase in ("Everything can become", "Reality-rejection gate", "Absurdity score"):
+    if required_phrase not in keyword_text and required_phrase not in transmutation_text:
+        fail(f"keyword giant-world system is missing required mechanism: {required_phrase}")
+
 assets = ROOT / "skills" / "hbg-oriental-giant-roam" / "assets"
 
 

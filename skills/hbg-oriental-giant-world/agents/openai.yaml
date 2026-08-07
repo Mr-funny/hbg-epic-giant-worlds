@@ -1,7 +1,7 @@
 interface:
   display_name: "HBG 东方巨物世界"
-  short_description: "把关键词或现有提示词稳定转换为明亮空灵的东方巨物影像"
+  short_description: "把题材转义成概念荒诞、材质写实、明亮空灵的东方巨构影像"
   icon_small: "./assets/icon.svg"
   icon_large: "./assets/icon.svg"
   brand_color: "#B55239"
-  default_prompt: "使用 $hbg-oriental-giant-world 把“弹琴”转换为明亮空灵的东方巨物图片与视频方案。"
+  default_prompt: "使用 $hbg-oriental-giant-world 把“弹琴”转义成概念不可能但材质写实的东方巨构图片与视频方案。"

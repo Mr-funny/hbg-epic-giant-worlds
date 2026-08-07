@@ -1,4 +1,4 @@
-# HBG Eastern Colossal Style Lock v1.0
+# HBG Eastern Colossal Style Lock v1.1
 
 ## Constant visual DNA
 
@@ -10,6 +10,22 @@
 - Scale: tiny humans, one dominant giant form, long spatial intervals, generous negative space.
 - Detail: cinematic realism, coherent construction, precise ornament, natural wear, physically plausible light.
 - Motion: slow stabilized camera, layered parallax, restrained environmental action, rigid architecture.
+
+## Ontological absurdity lock
+
+The world must look physically real but must not be a plausible real-world landscape. Reality is the rendering method, not the premise.
+
+Require:
+
+- one familiar subject transformed into terrain, infrastructure, weather, a world-body, or a physical law;
+- an inseparable collision of at least two categories;
+- one impossible rule with visible second-order consequences;
+- human-scale architecture and tiny people attached to, inside, beneath, or crossing the giant form;
+- three independent scale proofs.
+
+Strong mechanisms include a face becoming a mountain-city whose eye socket holds a bridge, a serene giant creature becoming the sky ceiling above pillars, cloth or carved patterns becoming geology, an object cavity containing an exterior horizon, or a column system physically carrying a cloud ocean that spills into waterfalls.
+
+Reject ordinary scenic grandeur: temple plus volcano, coastal gate plus temple, village plus oversized roof, floating palace plus clouds, giant statue plus tourists, or any merely enlarged landmark with no category change and no environmental consequence.
 
 ## Variable subject layer
 
@@ -29,11 +45,11 @@ Prefer this stack:
 
 1. one close readable cultural object or material surface;
 2. a tiny human stage;
-3. one impossible but coherent giant structure or being;
+3. one impossible inhabited world-body or giant construct created through category fusion;
 4. vast atmosphere, terrain, or water;
 5. optionally one familiar cosmic anchor.
 
-Keep the layers spatially separated. The cosmic anchor gets negative space and cannot become generic space opera.
+Keep the layers spatially separated. Make the giant form control roughly half or more of the visual field through mass, silhouette, shadow, or negative-space dominance. The cosmic anchor gets negative space and cannot become generic space opera.
 
 ## Composition rotation
 
@@ -71,4 +87,3 @@ Write a new composition statement before adapting the style.
 No default gloom, horror, apocalypse, dead-black foreground mass, storm-grey wash, neon cyberpunk, spacecraft, hologram UI, multiple planets, European castle substitution, Japanese shrine substitution, dense crowd, character close-up, combat, malformed ornament, fake scripture, text, subtitle, logo, or watermark.
 
 For Chinese mythic creatures: no bat wings, bulky Western-dragon anatomy, attack pose, monster face, or fire-breathing cliché unless explicitly requested.
-
