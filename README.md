@@ -261,7 +261,7 @@ Skill 本身不包含模型额度、不绕过登录、不代替用户授权，�
 
 ## 进一步阅读
 
-- [长文：我把 468 条东方巨物 Prompt 的经验，拆成了三路 Agent Skill](docs/article.md)
+- [长文：为了让一个镜头真正恢宏，我做了东方巨物、关键词扩展和近 500 条 Prompt 漫游](docs/article.md)
 - [关键词巨物示例](examples/keyword-iceland.md)
 - [东方化示例](examples/oriental-qin.md)
 - [漫游固定种子示例](examples/roam-seed-2026.md)
@@ -269,4 +269,3 @@ Skill 本身不包含模型额度、不绕过登录、不代替用户授权，�
 ## License
 
 代码、Skill 文档与 HBG 原创题卡使用 [MIT License](LICENSE)。第三方 Prompt、图片、视频、商标和文化素材仍归各自权利人所有，不因本仓库的工具代码而改变许可状态。
-
